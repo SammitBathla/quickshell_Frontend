@@ -32,7 +32,7 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
       case 'Canceled':
         return '/Cancelled.svg'; 
       case 'Backlog':
-        return '/backlog.svg'; 
+        return '/Backlog.svg'; 
       default:
         return null;
     }
