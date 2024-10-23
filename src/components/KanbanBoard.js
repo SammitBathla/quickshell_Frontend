@@ -7,7 +7,7 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
   const getPriorityIcon = (priority) => {
     switch (priority) {
       case 4:
-        return { icon: '/urgent-priority.svg', name: 'Urgent' };
+        return { icon: '/urgent-priorityc.svg', name: 'Urgent' };
       case 3:
         return { icon: '/high-priority.svg', name: 'High' };
       case 2:
