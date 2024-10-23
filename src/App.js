@@ -29,6 +29,7 @@ function App() {
           <div className="dropdown-container">
             <img src='/Display.svg' />
             Display
+            <img src='/down.svg' />
             <div className="dropdown-content">
               <div className="grouping">
                 <label htmlFor="grouping">Grouping</label>

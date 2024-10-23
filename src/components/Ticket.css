@@ -1,24 +1,45 @@
 .ticket {
-    background-color: white;
-    padding: 10px;
-    border-radius: 8px;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .ticket h3 {
-    font-size: 18px;
-    margin: 0;
-  }
-  
-  .ticket p {
-    margin: 5px 0;
-  }
-  
-  .priority-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.ticket p {
+  color: gray;
+}
+
+.ticket h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.ticket p {
+  margin: 5px 0;
+}
+
+.priority-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.ticket-status {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust gap between status icon, title, and avatar */
+}
+
+.ticket-id-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 4px;
+}

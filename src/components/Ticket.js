@@ -1,8 +1,8 @@
 import React from 'react';
 import './Ticket.css';
 
-const Ticket = ({ ticket }) => {
-  const { id, title, priority, tag, status } = ticket; // Make sure 'status' is part of ticket
+const Ticket = ({ ticket, grouping }) => {
+  const { id, title, priority, tag, status } = ticket;
 
   const getPriorityIcon = (priority) => {
     switch (priority) {
@@ -16,21 +16,6 @@ const Ticket = ({ ticket }) => {
         return "/low-priority.svg";
       default:
         return "/no-priority.svg";
-    }
-  };
-
-  const priorityColor = (priority) => {
-    switch (priority) {
-      case 4:
-        return 'red';
-      case 3:
-        return 'orange';
-      case 2:
-        return 'yellow';
-      case 1:
-        return 'green';
-      default:
-        return 'gray';
     }
   };
 
@@ -53,9 +38,21 @@ const Ticket = ({ ticket }) => {
 
   return (
     <div className="ticket">
-      <p>{id}</p>
+      {/* ID and Avatar Inline */}
+      <div className="ticket-id-avatar">
+        <p>{id}</p>
+        {/* Conditionally show image only when grouping is priority or status */}
+        {(grouping === 'priority' || grouping === 'status') && (
+          <img
+            src={'/images.png'}  
+            alt="User"
+            className="user-icon"
+            style={{ width: '20px', height: '20px', borderRadius: '50%', marginLeft: '10px' }}
+          />
+        )}
+      </div>
 
-      {/* Status Icon and Text */}
+      {/* Status Icon and Title */}
       <div className="ticket-status">
         <img
           src={getStatusIcon(status)}
@@ -63,12 +60,10 @@ const Ticket = ({ ticket }) => {
           className="status-icon"
           style={{ border: '1px lightgrey solid', borderRadius: '3px' }}
         />
-        <span className="status-text" style={{ marginLeft: '8px' }}>{status}</span>
+        <h3>{title}</h3>
       </div>
 
-      <h3>{title}</h3>
-
-      {/* Display priority icon and user image */}
+      {/* Priority Icon and Tags */}
       <p style={{ display: 'flex', alignItems: 'center' }}>
         <img
           src={getPriorityIcon(priority)}
@@ -76,16 +71,14 @@ const Ticket = ({ ticket }) => {
           className="priority-icon"
           style={{ border: '1px lightgrey solid', borderRadius: '3px' }}
         />
-
-        {/* Assuming `tag[0]` contains the user image */}
         <div style={{ margin: '8px', border: '1px lightgrey solid' }}>
           <img
-            src={'/image.png'}  // You may replace this with actual user image source
+            src={'/image.png'}  
             alt="User"
             className="user-icon"
-            style={{ marginLeft: '8px', width: '15px' }}
+            style={{ width: '14px' }}
           />
-          <span style={{ marginLeft: '8px' }}>{tag.join(', ')}</span>
+          <span >{tag.join(', ')}</span>
         </div>
       </p>
     </div>

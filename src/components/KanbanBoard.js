@@ -38,10 +38,9 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
     }
   };
 
-  // Updated to use user name directly
   const getUserAvatar = (userName) => {
     const user = users.find((u) => u.name === userName); 
-    return user && user.avatar ? user.avatar : '/images.png'; // Fallback to default if no avatar found
+    return user && user.avatar ? user.avatar : '/images.png';
   };
 
   const groupTickets = (tickets) => {
@@ -97,7 +96,6 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
         <div key={groupKey} className="kanban-column">
           <div className="kanban-column-header">
             <div className="kanban-header-content">
-              {/* Conditionally render based on grouping type */}
               {grouping === 'priority' && (
                 <>
                   <img 
@@ -125,11 +123,11 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
               {grouping === 'user' && (
                 <div className="kanban-user-header">
                   <img 
-                    src={getUserAvatar(groupKey)} // Fetch user's avatar using their name (groupKey)
+                    src={getUserAvatar(groupKey)} 
                     alt={groupKey} 
                     className="user-avatar-icon" 
                   />
-                  <span className="status-text">{groupKey}</span> {/* groupKey is the user name */}
+                  <span className="status-text">{groupKey}</span>
                 </div>
               )}
             </div>
@@ -140,7 +138,7 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
           </div>
           <div className="kanban-column-body">
             {sortTickets(groupedTickets[groupKey]).map((ticket) => (  
-              <Ticket key={ticket.id} ticket={ticket} users={users} />
+              <Ticket key={ticket.id} ticket={ticket} grouping={grouping} />
             ))}
           </div>
         </div>
