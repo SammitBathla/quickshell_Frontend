@@ -1,0 +1,74 @@
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.user-avatar-icon {
+  width: 20px;      /* Adjust to your preferred size */
+  height: 14px;     
+  border-radius: 50%;  /* Make the image circular */
+  object-fit: cover;   /* Ensures the image doesn't stretch */
+}
+
+
+.kanban-column {
+  padding: 10px;
+  width: 30%;
+}
+
+.kanban-column h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.kanban-column .ticket {
+  margin-bottom: 15px;
+}
+
+.kanban-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.kanban-header-content {
+  display: flex;
+  align-items: center;  
+  gap: 10px;  
+}
+
+.status-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.status-text {
+  font-size: 16px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.kanban-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.plus-icon {
+  cursor: pointer;
+}
+
+.options-icon {
+  cursor: pointer;
+}
